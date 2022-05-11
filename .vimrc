@@ -19,7 +19,7 @@ set clipboard=unnamedplus
 
 " Tab settings
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=5
 set softtabstop=4
 set expandtab
 
@@ -71,6 +71,13 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'pearofducks/ansible-vim'
 Plug 'tomtom/tcomment_vim'
 
+" Nerd Tree plugins
+Plug 'scrooloose/nerdtree'
+Plug 'tsony-tsonev/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+
 " shows tab spaces
 Plug 'git@github.com:nathanaelkane/vim-indent-guides'
 
@@ -102,6 +109,31 @@ let g:ctrlp_use_caching = 0
 
 " If there is an error show it in the same buffer
 let g:pymode_lint_cwindow = 0
+
+" NERDTree Settings
+nmap <C-f> :NERDTreeToggle<CR>
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+
+" Open NERDTree automatically
+autocmd VimEnter * NERDTree
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+let g:NERDTreeGitStatusWithFlags = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeColorMapCustom = {
+    \ "Staged"      : "#0ee375",
+    \ "Modified"    : "#d9bf91",
+    \ "Renamed"     : "#51C9FC",
+    \ "Untracked"   : "#FCE77C",
+    \ "Unmerged"    : "#FC51E6",
+    \ "Dirty"       : "#FFBD61",
+    \ "Clean"       : "#87939A",
+    \ "Ignored"     : "#808080"
+    \ }
+
+let g:NERDTreeIgnore = ['^node_modules$']
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
