@@ -70,6 +70,8 @@ Plug 'mbbill/undotree'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'pearofducks/ansible-vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'junegunn/fzf', { 'dir': '~/opt/fzf' }
+Plug 'junegunn/fzf.vim'
 
 " Nerd Tree plugins
 Plug 'scrooloose/nerdtree'
@@ -175,4 +177,12 @@ augroup THE_PRIMEAGEN
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
+
+" Enable Ag fuzzy finder
+command! -bang -nargs=* Ag
+  \ call fzf#vim#grep(
+  \   'ag --column --numbers --noheading --color --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+map <C-g> :Ag
 
