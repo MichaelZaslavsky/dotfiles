@@ -72,6 +72,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'junegunn/fzf', { 'dir': '~/opt/fzf' }
 Plug 'junegunn/fzf.vim'
+Plug 'jiangmiao/auto-pairs'
 
 " Nerd Tree plugins
 Plug 'scrooloose/nerdtree'
