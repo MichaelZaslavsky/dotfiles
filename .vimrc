@@ -234,3 +234,5 @@ let g:ale_echo_msg_format = '[%linter%] %code% %s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+
