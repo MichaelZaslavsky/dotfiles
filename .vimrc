@@ -74,6 +74,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'dense-analysis/ale'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Nerd Tree plugins
 Plug 'scrooloose/nerdtree'
@@ -82,7 +83,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 
-" shows tab spaces
+" Show tab spaces
 Plug 'git@github.com:nathanaelkane/vim-indent-guides'
 
 call plug#end()
@@ -235,3 +236,13 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
 
+" Make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
