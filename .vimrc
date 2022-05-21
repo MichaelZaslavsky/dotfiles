@@ -338,6 +338,7 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 " Jump to the next/prev position
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 
 " .............................................................................
 " Valloric/YouCompleteMe
