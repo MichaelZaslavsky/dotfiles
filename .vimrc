@@ -59,7 +59,7 @@ let &t_EI = "\e[2 q"
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-" Auto clost (X)HTML tags
+" Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
 
 " Check syntax in Vim Asynchronously and fix files

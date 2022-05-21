@@ -1,1 +1,0 @@
-/home/misha/src/git/dotfiles/.vim
