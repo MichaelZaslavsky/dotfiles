@@ -131,9 +131,6 @@ call plug#end()
 " Color settings
 " -----------------------------------------------------------------------------
 
-" Enable syntax highlighting
-syntax on
-
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Specific colorscheme settings (must come before setting your colorscheme)
