@@ -54,6 +54,11 @@ set splitbelow splitright
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+" Highlight only the cursor line number (without the cursor line)
+hi CursorLineNr guifg=#af00af
+set cursorline
+set cursorlineopt=number
+
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
