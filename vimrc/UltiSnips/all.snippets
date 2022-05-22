@@ -1,163 +1,169 @@
+global !p
+from snippet_helpers import *
+endglobal
+
 # -----------------------------------------------------------------------------
 # Terraform
 # -----------------------------------------------------------------------------
 
-snippet aip "aws_iam_policy resource"
+snippet aip "aws_iam_policy resource" b
 resource "aws_iam_policy" "${1:__policy__}" {
-  name        = "${2:__policy__}"
-  description = "${3:__description__}"
-  policy      = ${4:__policy__}
+  name        = "$1"
+  description = "${2:__description__}"
+  policy      = data.aws_iam_policy_document.$1.json
 }
 endsnippet
 
-snippet aipd "aws_iam_policy_document data"
+snippet aipd "aws_iam_policy_document data" b
 data "aws_iam_policy_document" "${1:__policy__}" {
   statement {
     actions = [
-      "${2}",
+      "$2",
     ]
 
-    resources = ["${3}"]
+    resources = ["$3"]
   }
 }
 endsnippet
 
-snippet air "aws_iam_role resource"
+snippet air "aws_iam_role resource" b
 resource "aws_iam_role" "${1:__role__}" {
-  name = "${2:__role__}"
+  name = "$1"
 
-  assume_role_policy = ${3}
+  assume_role_policy = data.aws_iam_policy_document.gw-assume-role-with-saml.json
   # 12 hours, the maximum allowed
   max_session_duration = 43200
 }
 endsnippet
 
-snippet airpa "aws_iam_role_policy_attachment resource"
-resource "aws_iam_role_policy_attachment" "${1:__role-policy__}" {
-  role       = aws_iam_role.${2:__role__}.name
-  policy_arn = aws_iam_policy.${3:__policy__}.arn
+snippet airpa "aws_iam_role_policy_attachment resource" b
+resource "aws_iam_role_policy_attachment" "${1:__role__}-${2:__policy__}" {
+  role       = aws_iam_role.$1.name
+  policy_arn = aws_iam_policy.$2.arn
 }
 endsnippet
 
-snippet gil "github_issue_label resource"
+snippet gil "github_issue_label resource" b
 resource "github_issue_label" "${1:__label__}" {
-  name = "${2:__label__}"
+  name = "$1"
 
-  color       = local.${3:__advisory/gogogo/warning__}_color
-  description = "${4:__description__}"
+  color       = local.$2`!p snip.rv=complete(t[2], ['advisory','gogogo','warning'])`_color
+  description = "${3:__description__}"
   repository  = github_repository.repo.name
 }
 endsnippet
 
-snippet gr "github repository module"
+snippet gr "github repository module" b
 module "${1:__reponamewithoutprefix__}_repo" {
-  source	  = "${2:__pathtosmartrepo__}"
-  name        = "${3:__repositoryname__}"
+  source = "${2:__pathtosmartrepo__}"
+
+  name        = "${3:__repo__}"
   description = "${4:__description__}"
 }
 endsnippet
 
-snippet gt "github_team resource"
+snippet gt "github_team resource" b
 resource "github_team" "${1:__name__}" {
-  name           = "${2:__name__}"
-  ${3:__optional__}#parent_team_id = ${4:__parent.id__}
+  name           = "$1"
+  ${2:__optional__}#parent_team_id = ${3:__parent.id__}
   privacy        = "closed"
 }
 endsnippet
 
-snippet gtm "github_team_membership resource"
-resource "github_team_membership" "${1:__teamname__}" {
+snippet gtm "github_team_membership resource" b
+resource "github_team_membership" "${1:__teamname__}-members" {
   for_each = toset([
     "${2:__member__}",
   ])
 
-  team_id  = github_team.${3:__teamname__}.id
+  team_id  = github_team.$1.id
   role     = "member"
   username = each.key
 }
 endsnippet
 
-snippet gtr "github_team_repository resource"
+snippet gtr "github_team_repository resource" b
 resource "github_team_repository" "${1:__teamname__}-${2:__repo__}" {
-  team_id    = github_team.${3:__teamname__}.id
-  repository = module.${4:__repo__}.name
+  team_id    = ${3:optional}github_team.$1$4`!p snip.rv=complete(t[4], ['.', '_'])`id
+  repository = module.$2.name
   permission = "push"
 }
 endsnippet
 
-snippet nrepo "New repository"
+snippet nrepo "New repository" b
 resource "github_team" "${1:__name__}" {
-  name           = "${2:__name__}"
-  ${3:optional}#parent_team_id = ${4:__parent.id__}
+  name           = "$1"
+  ${2:__optional__}#parent_team_id = ${3:__parent.id__}
   privacy        = "closed"
 }
 
-resource "github_team_membership" "${5:__teamname__}" {
+resource "github_team_membership" "$1-members" {
   for_each = toset([
-    "${6:__member__}",
+    "${4:__member__}",
   ])
 
-  team_id  = github_team.${7:__teamname__}.id
+  team_id  = github_team.$1.id
   role     = "member"
   username = each.key
 }
 
-module "${8:__reponamewithoutprefix__}_repo" {
-  source	  = "${9:__pathtosmartrepo__}"
-  name        = "${10:__reponame__}"
-  description = "${11:__description__}"
+module "${5:__reponamewithoutprefix__}_repo" {
+  source = "${6:__pathtosmartrepo__}"
+
+  name        = "${7:__repo__}"
+  description = "${8:__description__}"
 }
 
-resource "github_team_repository" "${12:__teamname__}-${13:__repo__}" {
-  team_id    = github_team.${14:__teamname__}.id
-  repository = module.${15:__repo__}.name
+resource "github_team_repository" "$1-$7" {
+  team_id    = $2github_team.$1$9`!p snip.rv=complete(t[9], ['.', '_'])`id
+  repository = module.$7.name
   permission = "push"
 }
 endsnippet
 
-snippet nrole "New role"
+snippet nrole "New role" b
 data "aws_iam_policy_document" "${1:__policy__}" {
   statement {
     actions = [
-      "${2}",
+      "$2",
     ]
 
-    resources = ["${3}"]
+    resources = ["$3"]
   }
 }
 
-resource "aws_iam_policy" "${4:__policy__}" {
-  name        = "${5:__policy__}"
-  description = "${6:__description__}"
-  policy      = ${7:__policy__}
+resource "aws_iam_policy" "$1" {
+  name        = "$1"
+  description = "${4:__description__}"
+  policy      = data.aws_iam_policy_document.$1.json
 }
 
-resource "aws_iam_role" "${8:__role__}" {
-  name = "${9:__role__}"
+resource "aws_iam_role" "${5:__role__}" {
+  name = "$5"
 
-  assume_role_policy = ${10}
+  assume_role_policy = data.aws_iam_policy_document.gw-assume-role-with-saml.json
   # 12 hours, the maximum allowed
   max_session_duration = 43200
 }
 
-resource "aws_iam_role_policy_attachment" "${11:__role-policy__}" {
-  role       = aws_iam_role.${12:__role__}.name
-  policy_arn = aws_iam_policy.${13:__policy__}.arn
+resource "aws_iam_role_policy_attachment" "$5-$1" {
+  role       = aws_iam_role.$5.name
+  policy_arn = aws_iam_policy.$1.arn
 }
 endsnippet
 
-snippet output
+snippet output "Output" b
 output "${1:__snake_case__}" {
-  value = ${2}
+  value = $2
 }
 endsnippet
 
-snippet statement
+snippet statement "Statement" b
 statement {
   actions = [
-    "${1}",
+    "$1",
   ]
 
-  resources = ["${2}"]
+  resources = ["$2"]
 }
 endsnippet
