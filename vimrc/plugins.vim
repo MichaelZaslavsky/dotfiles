@@ -86,19 +86,6 @@ let g:ctrlp_user_command = [
 let g:ctrlp_use_caching = 0
 
 " .............................................................................
-" morhetz/gruvbox
-" .............................................................................
-
-" Specific colorscheme settings (must come before setting your colorscheme)
-if !exists('g:gruvbox_contrast_light')
-  let g:gruvbox_contrast_light='hard'
-endif
-
-" Set the color scheme
-colorscheme gruvbox
-set background=dark
-
-" .............................................................................
 " Nerd Tree plugins
 " .............................................................................
 
