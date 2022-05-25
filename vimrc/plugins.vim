@@ -97,7 +97,7 @@ nmap ++ <plug>NERDCommenterToggle
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-let g:netrw_browse_split=2
+let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:NERDTreeGitStatusWithFlags = 1
@@ -114,7 +114,8 @@ let g:NERDTreeColorMapCustom = {
     \ "Ignored"     : "#808080"
     \ }
 
-let g:NERDTreeIgnore = ['^node_modules$']
+let g:NERDTreeIgnore = ['^node_modules$', '\.*.swp$']
+let g:NERDTreeShowHidden = 1
 
 " .............................................................................
 " python-mode/python-mode
