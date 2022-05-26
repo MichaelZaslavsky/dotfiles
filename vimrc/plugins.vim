@@ -77,13 +77,41 @@ map <C-g> :Ag
 " kien/ctrlp.vim
 " .............................................................................
 
-let g:ctrlp_user_command = [
-    \'.git/',
-    \'git --git-dir=%s/.git ls-files -oc --exclude-standard'
-    \]
+" Change the default mapping and the default command to invoke CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" When invoked, unless a starting directory is specified,
+" CtrlP will set its local working directory according to this variable
+let g:ctrlp_working_path_mode = 'ra'
+
+" Exclude files or directories using Vim's wildignore
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
+
+" Use a custom file listing command
+let g:ctrlp_user_command = {
+	\ 'types': {
+		\ 1: ['.git', 'cd %s && git ls-files'],
+		\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+		\ },
+	\ 'fallback': 'find %s -type f'
+	\ }
 
 " ag is fast enough that CtrlP doesn't need to cache "
 let g:ctrlp_use_caching = 0
+
+" Search by file name and not by directory name
+let g:ctrlp_by_filename = 1
+
+" Show hidden directories
+let g:ctrlp_show_hidden = 1
 
 " .............................................................................
 " Nerd Tree plugins
