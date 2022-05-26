@@ -170,8 +170,8 @@ let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 " Valloric/YouCompleteMe
 " .............................................................................
 
-nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <Leader>fi :YcmCompleter FixIt<CR>
 
 " Make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -186,3 +186,7 @@ let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_sys_path'
   \]
 let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
+
+" Auto-close the preview window after the user accepts the offered completion
+" string
+let g:ycm_autoclose_preview_window_after_completion=1
