@@ -54,8 +54,8 @@ resource "github_issue_label" "${1:__label__}" {
 endsnippet
 
 snippet gr "github repository module" b
-module "${1:__reponamewithoutprefix__}_repo" {
-  source = "${2:__pathtosmartrepo__}"
+module "${1:__repo_name_without_prefix__}_repo" {
+  source = "${2:__path_to_smart_repo__}"
 
   name        = "${3:__repo__}"
   description = "${4:__description__}"
@@ -71,7 +71,7 @@ resource "github_team" "${1:__name__}" {
 endsnippet
 
 snippet gtm "github_team_membership resource" b
-resource "github_team_membership" "${1:__teamname__}-members" {
+resource "github_team_membership" "${1:__team_name__}-members" {
   for_each = toset([
     "${2:__member__}",
   ])
@@ -83,9 +83,9 @@ resource "github_team_membership" "${1:__teamname__}-members" {
 endsnippet
 
 snippet gtr "github_team_repository resource" b
-resource "github_team_repository" "${1:__teamname__}-${2:__repo__}" {
+resource "github_team_repository" "${1:__team_name__}-${2:__repo_dash_case__}" {
   team_id    = ${3:optional}github_team.$1$4`!p snip.rv=complete(t[4], ['.', '_'])`id
-  repository = module.$2.name
+  repository = module.${5:__repo_snake_case__}.name
   permission = "push"
 }
 endsnippet
@@ -107,8 +107,8 @@ resource "github_team_membership" "$1-members" {
   username = each.key
 }
 
-module "${5:__reponamewithoutprefix__}_repo" {
-  source = "${6:__pathtosmartrepo__}"
+module "${5:__repo_name_without_prefix__}_repo" {
+  source = "${6:__path_to_smart_repo__}"
 
   name        = "${7:__repo__}"
   description = "${8:__description__}"
@@ -116,7 +116,7 @@ module "${5:__reponamewithoutprefix__}_repo" {
 
 resource "github_team_repository" "$1-$7" {
   team_id    = $2github_team.$1$9`!p snip.rv=complete(t[9], ['.', '_'])`id
-  repository = module.$7.name
+  repository = module.${10:__repo_snake_case__}.name
   permission = "push"
 }
 endsnippet
