@@ -21,7 +21,8 @@ ls -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vimrc/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/vimrc/*.vim ~/.vim/plugin
 ln -s ~/.dotfiles/vimrc/UltiSnips/* ~/.vim/UltiSnips/
-ln -s ~/.dotfiles/pythonx/* ~/.vim/pythonx/
+ln -s ~/.dotfiles/pythonx/snippet_helpers.py ~/.vim/pythonx/snippet_helpers.py
+ln -s ~/.dotfiles/pythonx/global_extra_conf.py ~/global_extra_conf.py
 ```
 
 ## Tools and dependencies
