@@ -177,3 +177,12 @@ nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" Set global path to the Python interpreter and sys
+let g:ycm_python_interpreter_path = '/usr/bin/python3.10'
+let g:ycm_python_sys_path = ['/usr/lib/python3.10']
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/global_extra_conf.py'
