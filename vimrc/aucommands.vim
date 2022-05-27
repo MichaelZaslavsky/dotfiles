@@ -10,6 +10,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+autocmd FileType yaml setlocal et ts=2 ai sw=2 nu sts=0
 
 " Trim white spaces in the file
 fun! TrimWhitespace()
