@@ -65,9 +65,6 @@ Plug 'preservim/nerdcommenter'
 " A bunch of useful language related snippets (ultisnips is the engine)
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" An extensible & universal comment Vim plugin
-Plug 'tomtom/tcomment_vim'
-
 " A git wrapper
 Plug 'tpope/vim-fugitive'
 
