@@ -118,8 +118,6 @@ let g:ctrlp_show_hidden = 1
 " .............................................................................
 
 nmap <C-f> :NERDTreeToggle<CR>
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
 
 " Open NERDTree automatically
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
@@ -144,6 +142,28 @@ let g:NERDTreeColorMapCustom = {
 
 let g:NERDTreeIgnore = ['^node_modules$', '\.*.swp$']
 let g:NERDTreeShowHidden = 1
+
+" .............................................................................
+" preservim/nerdcommenter
+" .............................................................................
+
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
 
 " .............................................................................
 " python-mode/python-mode
