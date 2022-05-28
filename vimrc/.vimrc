@@ -15,6 +15,8 @@ let maplocalleader=" "
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
+filetype plugin on
+
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
@@ -57,6 +59,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Syntax highlighting
 Plug 'pearofducks/ansible-vim'
 
+" Intensely nerdy commenting powers
+Plug 'preservim/nerdcommenter'
+
 " A bunch of useful language related snippets (ultisnips is the engine)
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
@@ -81,7 +86,6 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " Nerd Tree plugins - a tree explorer plugins
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
