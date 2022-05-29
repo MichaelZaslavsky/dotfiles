@@ -28,6 +28,9 @@ Plug 'alvan/vim-closetag'
 " Check syntax in Vim Asynchronously and fix files
 Plug 'dense-analysis/ale'
 
+" Support EditorConfig file in VIM
+Plug 'editorconfig/editorconfig-vim'
+
 " Insert or delete brackets, parens and quotes in pair
 Plug 'jiangmiao/auto-pairs'
 
