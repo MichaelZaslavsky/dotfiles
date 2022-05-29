@@ -52,6 +52,7 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %code% %s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <Leader>aft :ALEFix terraform<CR>
 
 " .............................................................................
 " 'jremmen/vim-ripgrep'
