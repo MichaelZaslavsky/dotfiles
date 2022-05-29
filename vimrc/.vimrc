@@ -16,6 +16,7 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 filetype plugin on
+filetype indent plugin on
 
 " -----------------------------------------------------------------------------
 " Plugins
@@ -58,6 +59,9 @@ Plug 'morhetz/gruvbox'
 
 " Visually display indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
+
+" Provides IDE like abilities for C#
+Plug 'OmniSharp/omnisharp-vim'
 
 " Syntax highlighting
 Plug 'pearofducks/ansible-vim'
