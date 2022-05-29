@@ -197,6 +197,41 @@ let g:WebDevIconsDefaultFolderSymbolColor = s:beige
 let g:WebDevIconsDefaultFileSymbolColor = s:blue
 
 " .............................................................................
+" OmniSharp/omnisharp-vim
+" .............................................................................
+
+" Use the stdio OmniSharp-roslyn server
+let g:OmniSharp_server_stdio = 1
+
+let g:OmniSharp_server_use_mono = 1
+let g:OmniSharp_selector_ui = 'ctrlp'
+let g:OmniSharp_selector_findusages = 'fzf'
+let g:OmniSharp_popup_position = 'peek'
+let g:OmniSharp_popup_options = {
+  \ 'highlight': 'Normal',
+  \ 'padding': [0],
+  \ 'border': [1],
+  \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
+  \ 'borderhighlight': ['ModeMsg']
+  \}
+let g:OmniSharp_popup_mappings = {
+\ 'sigNext': '<C-n>',
+\ 'sigPrev': '<C-p>',
+\ 'pageDown': ['<C-f>', '<PageDown>'],
+\ 'pageUp': ['<C-b>', '<PageUp>']
+\}
+
+augroup omnisharp_commands
+    autocmd!
+    autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> Leader> fu :OmniSharpFindUsages<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader> fi :OmniSharpFindImplementations<CR>
+    autocmd FileType cs nnoremap <Leader>ca :OmniSharpGetCodeActions<CR>
+    autocmd FileType ts nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
+    autocmd FileType html nmap <silent> gd :call CocActionAsync('jumpDefinition')<CR>
+augroup END
+
+" .............................................................................
 " preservim/nerdcommenter
 " .............................................................................
 
@@ -219,6 +254,12 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 
 " .............................................................................
+" preservim/tagbar
+" .............................................................................
+
+nmap <F8> :TagbarToggle<CR>
+
+" .............................................................................
 " python-mode/python-mode
 " .............................................................................
 
@@ -238,6 +279,12 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+
+" .............................................................................
+" puremourning/vimspector
+" .............................................................................
+
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " .............................................................................
 " Valloric/YouCompleteMe

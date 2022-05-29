@@ -16,6 +16,7 @@ let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
 filetype plugin on
+filetype indent plugin on
 
 " -----------------------------------------------------------------------------
 " Plugins
@@ -27,6 +28,9 @@ Plug 'alvan/vim-closetag'
 
 " Check syntax in Vim Asynchronously and fix files
 Plug 'dense-analysis/ale'
+
+" Support EditorConfig file in VIM
+Plug 'editorconfig/editorconfig-vim'
 
 " Insert or delete brackets, parens and quotes in pair
 Plug 'jiangmiao/auto-pairs'
@@ -56,11 +60,20 @@ Plug 'morhetz/gruvbox'
 " Visually display indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
 
+" Provides IDE like abilities for C#
+Plug 'OmniSharp/omnisharp-vim'
+
 " Syntax highlighting
 Plug 'pearofducks/ansible-vim'
 
 " Intensely nerdy commenting powers
 Plug 'preservim/nerdcommenter'
+
+" Browse the tags of the current file and get an overview of its structure
+Plug 'preservim/tagbar'
+
+" A multi-language debugging system
+Plug 'puremourning/vimspector'
 
 " A bunch of useful language related snippets (ultisnips is the engine)
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
