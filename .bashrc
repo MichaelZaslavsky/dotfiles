@@ -73,6 +73,13 @@ fi
 # Colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# NNN settings
+export NNN_PLUG='u:davecloud;o:fzopen;c:fcd;j:jump;p:preview-tui;i:imgview;v:vidthumb;d:dragdrop'
+export NNN_FCOLORS='0000E6310000000000000000'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_OPTS="H" # Show hidden files
+alias nnn='nnn -e'
+
 # -----------------------------------------------------------------------------
 # Aliases
 # -----------------------------------------------------------------------------
