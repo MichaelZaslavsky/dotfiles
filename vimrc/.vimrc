@@ -72,6 +72,9 @@ Plug 'preservim/nerdcommenter'
 " Browse the tags of the current file and get an overview of its structure
 Plug 'preservim/tagbar'
 
+" A multi-language debugging system
+Plug 'puremourning/vimspector'
+
 " A bunch of useful language related snippets (ultisnips is the engine)
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
