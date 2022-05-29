@@ -82,10 +82,10 @@ Plug 'hashivim/vim-terraform'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 " Nerd Tree plugins - a tree explorer plugins
+Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
-Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
