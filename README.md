@@ -16,8 +16,10 @@ git clone https://github.com/MichaelZaslavsky/dotfiles.git ~/.dotfiles
 Add symbolic links to the `.bashrc`, `.vimrc`, `.tmux.conf` files and its related files.
 
 ```bash
-ls -s ~/.dotfiles/.bashrc ~/.bashrc
-ls -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/bashrc/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/bashrc/.bash_aliases ~/.bash_aliases
+ln -s ~/.dotfiles/.profile ~/.profile
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vimrc/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/vimrc/*.vim ~/.vim/plugin
 ln -s ~/.dotfiles/vimrc/UltiSnips/* ~/.vim/UltiSnips/
