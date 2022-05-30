@@ -26,6 +26,9 @@ call plug#begin('~/.vim/plugged')
 " Auto close (X)HTML tags
 Plug 'alvan/vim-closetag'
 
+" Provides IDE like abilities for Angular
+Plug 'burnettk/vim-angular'
+
 " Check syntax in Vim Asynchronously and fix files
 Plug 'dense-analysis/ale'
 
