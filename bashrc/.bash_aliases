@@ -104,7 +104,7 @@ alias dir5='du -cksh * | sort -hr | head -n 5'
 alias dir10='du -cksh * | sort -hr | head -n 10'
 
 # Safetynets
-alias rm ='rm -I --preserve-root' # do not delete / or prompt if deleting more than 3 files at a time
+alias rm='rm -I --preserve-root' # do not delete / or prompt if deleting more than 3 files at a time
 
 # Manage packages easier
 if [ -f /usr/bin/apt ]; then
