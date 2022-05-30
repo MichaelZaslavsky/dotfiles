@@ -119,6 +119,7 @@ let g:ctrlp_show_hidden = 1
 " .............................................................................
 
 nmap <C-f> :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeRefreshRoot<CR>
 
 " Open NERDTree automatically
 autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
