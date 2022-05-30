@@ -121,6 +121,7 @@ alias cp='cp -iv'
 alias chmod="chmod -c"
 alias df="df -h --exclude=squashfs"
 alias diff='colordiff'
+alias e='exit'
 alias h='history'
 alias tree='tree --dirsfirst -F' # Display the directory structure better
 alias mkdir='mkdir -pv' # Make a directory and all parent directories with verbosity.
