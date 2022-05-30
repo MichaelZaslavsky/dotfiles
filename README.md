@@ -29,11 +29,21 @@ ln -s ~/.dotfiles/pythonx/global_extra_conf.py ~/global_extra_conf.py
 
 ## Tools and dependencies
 ### bash
-#### bash-git-prompt
-An informative and fancy bash prompt as seen [here](https://github.com/magicmonty/bash-git-prompt).
+#### bash-it
+[bash-it](https://github.com/Bash-it/bash-it) is a collection of community Bash commands and scripts.
+Includes autocompletion, themes, aliases, custom function, and more.
 
 ```bash
-git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+Run `~/.bash_it/install.sh`
+```
+
+#### thefuck
+
+[thefuck](https://github.com/nvbn/thefuck) is a manificent app, that corrects errors in previous console commands.
+
+```bash
+pip install --user thefuck
 ```
 
 ### tmux
