@@ -18,6 +18,7 @@ alias ...='cd ../..;pwd'        # Move up two parent directories
 alias ....='cd ../../..;pwd'    # Move up three parent directories
 alias back='cd $OLDPWD'
 alias cd..='cd ..'
+alias sg='cd ~/src/git/'
 
 # Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -80,6 +81,7 @@ alias grs='git rebase --skip'
 # Git multiple commands aliases
 alias gac='git add .; git commit -m'
 alias gaca='git add .; git commit --am'
+alias gfrhm='git fetch; git rebase --hard origin/master'
 alias gfrm='git fetch; git rebase origin/master'
 alias gsd='git status; git diff'
 alias gsda='git status; git diff; git add .'
@@ -104,7 +106,7 @@ alias dir5='du -cksh * | sort -hr | head -n 5'
 alias dir10='du -cksh * | sort -hr | head -n 10'
 
 # Safetynets
-alias rm ='rm -I --preserve-root' # do not delete / or prompt if deleting more than 3 files at a time
+alias rm='rm -I --preserve-root' # do not delete / or prompt if deleting more than 3 files at a time
 
 # Manage packages easier
 if [ -f /usr/bin/apt ]; then
