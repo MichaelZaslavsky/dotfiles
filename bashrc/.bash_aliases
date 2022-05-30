@@ -128,3 +128,4 @@ alias reload="source ~/.bashrc"
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias weather='curl wttr.in'
 alias wget='wget -c'
+eval $(thefuck --alias)

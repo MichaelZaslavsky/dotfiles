@@ -36,6 +36,14 @@ An informative and fancy bash prompt as seen [here](https://github.com/magicmont
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 ```
 
+#### thefuck
+
+[thefuck](https://github.com/nvbn/thefuck) is a manificent app, that corrects errors in previous console commands.
+
+```bash
+pip install --user thefuck
+```
+
 ### tmux
 #### tpm
 
