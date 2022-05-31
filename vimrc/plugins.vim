@@ -45,11 +45,31 @@ let g:closetag_close_shortcut = '<leader>>'
 " dense-analysis/ale
 " .............................................................................
 
-" Linting
-let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %code% %s [%severity%]'
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_fix_on_save = 1
+
+" Check Python files with flake8 and pylint
+let b:ale_linters = ['flake8', 'pylint']
+
+" Fix Python files with autopep8 and yapf
+let b:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['autopep8', 'yapf'],
+\}
+
+" Disable warnings about trailing whitespace for Python files
+let b:ale_warn_about_trailing_whitespace = 0
+
+" Do not lint or fix minified files
+let g:ale_pattern_options = {
+\ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+\ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+\}
+
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nnoremap <Leader>aft :ALEFix terraform<CR>
