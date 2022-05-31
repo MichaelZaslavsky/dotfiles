@@ -1,6 +1,12 @@
-def complete(t, opts):
-	if t:
-		opts = [ m[len(t):] for m in opts if m.startswith(t) ]
-	if len(opts) == 1:
-		return opts[0]
-	return "(" + '|'.join(opts) + ')'
+"""
+Python function helpers used by the snippets
+"""
+
+
+def complete(text, opts):
+    "Completes a text from the specified options"
+    if text:
+        opts = [m[len(text):] for m in opts if m.startswith(text)]
+    if len(opts) == 1:
+        return opts[0]
+    return "(" + '|'.join(opts) + ')'
