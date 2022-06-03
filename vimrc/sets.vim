@@ -2,6 +2,7 @@
 " Basic settings
 " -----------------------------------------------------------------------------
 
+set autoread
 set colorcolumn=80
 set encoding=utf-8
 set exrc
