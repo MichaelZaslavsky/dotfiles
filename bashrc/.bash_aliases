@@ -42,8 +42,11 @@ alias gf='git fetch'
 alias gl='git log --oneline'
 alias gpu='git pull'
 alias grhm='git reset --hard origin/master'
+alias grl='git reflog'
 alias grmc='git rm -r --cached' # Untrack files without deleting them
 alias gs='git status'
+alias gst='git stash'
+alias gstp='git stash pop'
 alias fwl='--force-with-lease'
 
 # Git checkout aliases
@@ -61,6 +64,7 @@ alias gcps='git cherry-pick --skip'
 # Git commit aliases
 alias gc='git commit -m'
 alias gca='git commit --am'
+alias gcane='git commit --am --no-edit'
 alias gcpatch='git commit -p'
 
 # Git push aliases
@@ -81,12 +85,31 @@ alias grs='git rebase --skip'
 # Git multiple commands aliases
 alias gac='git add .; git commit -m'
 alias gaca='git add .; git commit --am'
+alias gacap='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacapfwl='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacaps='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacapsfwl='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacanep='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacanepfwl='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacaneps='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacanepsfwl='git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gacanep='git add .; git commit --am --no-edit; git push --force-with-lease'
 alias gfrhm='git fetch; git rebase --hard origin/master'
 alias gfrm='git fetch; git rebase origin/master'
+alias gp!='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
 alias gsd='git status; git diff'
 alias gsda='git status; git diff; git add .'
 alias gsdac='git status; git diff; git add .; git commit -m'
 alias gsdaca='git status; git diff; git add .; git commit -am'
+alias gsdacane='git status; git diff; git add .; git commit --am --no-edit'
+alias gsdacanep='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacanepfwl='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacaneps='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacanepsfwl='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacap='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacapfwl='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacaps='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
+alias gsdacapsfwl='git status; git diff; git add .; git commit --am --no-edit; git push --force-with-lease'
 
 # Get top process eating CPU
 alias cpu5='ps auxf | sort -nr -k 3 | head -5'
@@ -128,6 +151,7 @@ alias mkdir='mkdir -pv' # Make a directory and all parent directories with verbo
 alias mv='mv -iv'
 alias python='python3'
 alias reload="source ~/.bashrc"
+alias s2="saml2aws login"
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias weather='curl wttr.in'
 alias wget='wget -c'
