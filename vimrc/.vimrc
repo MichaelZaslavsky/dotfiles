@@ -34,6 +34,9 @@ Plug 'dense-analysis/ale'
 " Support EditorConfig file in VIM
 Plug 'editorconfig/editorconfig-vim'
 
+" Intelligently reopen files at the last edit position
+Plug 'farmergreg/vim-lastplace'
+
 " Insert or delete brackets, parens and quotes in pair
 Plug 'jiangmiao/auto-pairs'
 
