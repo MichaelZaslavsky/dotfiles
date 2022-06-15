@@ -85,6 +85,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# There are some things one doesn't want in a public git repository
+if [ -f ~/.bash_private ]; then
+    . ~/.bash_private
+fi
+
 # -----------------------------------------------------------------------------
 # Functions
 # -----------------------------------------------------------------------------
