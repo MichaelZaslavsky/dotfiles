@@ -47,6 +47,7 @@ alias grl='git reflog'
 alias grmc='git rm -r --cached' # Untrack files without deleting them
 alias gs='git status'
 alias gst='git stash'
+alias gstd='git stash drop'
 alias gstp='git stash pop'
 alias fwl='--force-with-lease'
 
