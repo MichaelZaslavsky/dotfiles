@@ -37,6 +37,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Intelligently reopen files at the last edit position
 Plug 'farmergreg/vim-lastplace'
 
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
 " Insert or delete brackets, parens and quotes in pair
 Plug 'jiangmiao/auto-pairs'
 

@@ -83,7 +83,18 @@ let g:lastplace_ignore_buftype = "quickfix,nofile,help"
 let g:lastplace_open_folds = 0
 
 " .............................................................................
-" 'jremmen/vim-ripgrep'
+" iamcco/markdown-preview.nvim
+" .............................................................................
+
+" Open the preview window automatically after entering the markdown buffer
+let g:mkdp_auto_start = 1
+
+nmap <C-s> <Plug>MarkdownPreview
+nmap <M-s> <Plug>MarkdownPreviewStop
+nmap <C-m> <Plug>MarkdownPreviewToggle
+
+" .............................................................................
+" jremmen/vim-ripgrep
 " .............................................................................
 
 if executable('rg')
