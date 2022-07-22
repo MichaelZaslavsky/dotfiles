@@ -126,9 +126,9 @@ alias mem5='ps auxf | sort -nr -k 4 | head -5'
 alias mem10='ps auxf | sort -nr -k 4 | head -10'
 
 # Files aliases
-alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
 
 # List largest directories
 alias dir5='du -cksh * | sort -hr | head -n 5'
@@ -139,29 +139,30 @@ alias rm='rm -I --preserve-root' # do not delete / or prompt if deleting more th
 
 # Manage packages easier
 if [ -f /usr/bin/apt ]; then
+    alias install='sudo apt install'
     alias update='sudo apt update'
     alias upgrade='sudo apt update && sudo apt dist-upgrade'
-    alias install='sudo apt install'
 fi
 
 # Other aliases
 alias c='clear'
-alias cp='cp -iv'
 alias chmod='chmod -c'
+alias cp='cp -iv'
 alias df='df -h --exclude=squashfs'
 alias diff='colordiff'
 alias e='exit'
+alias gprmz='curl -s "https://api.github.com/search/issues?q=+type:pr+user:michaelzaslavsky&sort=created&order=asc" | jq '.total_count''
 alias h='history'
-alias redirect='curl vsSo/dev/null'
-alias tree='tree --dirsfirst -F' # Display the directory structure better
 alias mkdir='mkdir -pv' # Make a directory and all parent directories with verbosity.
 alias mv='mv -iv'
 alias python='python3'
+alias redirect='curl vsSo/dev/null'
 alias reload='source ~/.bashrc'
 alias s2='saml2aws login'
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias tf='terraform fmt'
 alias tmuxr='tmux source-file ~/.tmux.conf'
+alias tree='tree --dirsfirst -F' # Display the directory structure better
 alias weather='curl wttr.in'
 alias wget='wget -c'
 eval $(thefuck --alias)
