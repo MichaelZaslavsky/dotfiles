@@ -151,6 +151,7 @@ alias chmod='chmod -c'
 alias df='df -h --exclude=squashfs'
 alias diff='colordiff'
 alias e='exit'
+alias gprmz='curl -s "https://api.github.com/search/issues?q=+type:pr+user:michaelzaslavsky&sort=created&order=asc" | jq '.total_count''
 alias h='history'
 alias redirect='curl vsSo/dev/null'
 alias tree='tree --dirsfirst -F' # Display the directory structure better
