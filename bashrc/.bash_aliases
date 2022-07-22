@@ -152,6 +152,7 @@ alias df='df -h --exclude=squashfs'
 alias diff='colordiff'
 alias e='exit'
 alias h='history'
+alias redirect='curl vsSo/dev/null'
 alias tree='tree --dirsfirst -F' # Display the directory structure better
 alias mkdir='mkdir -pv' # Make a directory and all parent directories with verbosity.
 alias mv='mv -iv'
