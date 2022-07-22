@@ -3,6 +3,7 @@
 " -----------------------------------------------------------------------------
 
 set autoread
+set background=dark
 set colorcolumn=80
 set encoding=utf-8
 set exrc
