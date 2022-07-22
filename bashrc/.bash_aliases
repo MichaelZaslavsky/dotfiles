@@ -161,6 +161,7 @@ alias reload='source ~/.bashrc'
 alias s2='saml2aws login'
 alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias tf='terraform fmt'
+alias tmuxr='tmux source-file ~/.tmux.conf'
 alias weather='curl wttr.in'
 alias wget='wget -c'
 eval $(thefuck --alias)
