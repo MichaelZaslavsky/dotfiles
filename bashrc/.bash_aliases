@@ -153,6 +153,8 @@ alias diff='colordiff'
 alias e='exit'
 alias gprmz='curl -s "https://api.github.com/search/issues?q=+type:pr+user:michaelzaslavsky&sort=created&order=asc" | jq '.total_count''
 alias h='history'
+alias ht='htop'
+alias igt='sudo intel_gpu_top'
 alias mkdir='mkdir -pv' # Make a directory and all parent directories with verbosity.
 alias mv='mv -iv'
 alias python='python3'
@@ -163,6 +165,7 @@ alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 alias tf='terraform fmt'
 alias tmuxr='tmux source-file ~/.tmux.conf'
 alias tree='tree --dirsfirst -F' # Display the directory structure better
+alias vai='vainfo'
 alias weather='curl wttr.in'
 alias wget='wget -c'
 eval $(thefuck --alias)
