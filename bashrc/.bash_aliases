@@ -153,6 +153,7 @@ alias diff='colordiff'
 alias e='exit'
 alias gprmz='curl -s "https://api.github.com/search/issues?q=+type:pr+user:michaelzaslavsky&sort=created&order=asc" | jq '.total_count''
 alias h='history'
+alias home='autorandr docked-home'
 alias ht='htop'
 alias igt='sudo intel_gpu_top'
 alias mkdir='mkdir -pv' # Make a directory and all parent directories with verbosity.
@@ -168,4 +169,5 @@ alias tree='tree --dirsfirst -F' # Display the directory structure better
 alias vai='vainfo'
 alias weather='curl wttr.in'
 alias wget='wget -c'
+alias work='autorandr docked-work'
 eval $(thefuck --alias)
