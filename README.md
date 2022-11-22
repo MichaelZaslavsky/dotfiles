@@ -36,6 +36,7 @@ Includes autocompletion, themes, aliases, custom function, and more.
 ```bash
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 Run `~/.bash_it/install.sh`
+Reload bashrc by `source ~/.bashrc`
 ```
 
 #### thefuck
@@ -46,12 +47,21 @@ Run `~/.bash_it/install.sh`
 pip install --user thefuck
 ```
 
+#### Global search
+
+A great code-searching tool is the silver searcher (ag "{text to search}").
+
+```bash
+sudo apt install silversearcher-ag
+```
+
 ### tmux
 #### tpm
 
 [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm).
 
 ```bash
+sudo apt install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
@@ -65,6 +75,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 Make sure [python](https://www.python.org) is installed and follow those steps:
 
 ```bash
+sudo add-apt-repository universe
 pip install powerline
 pip install --user powerline-status
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
@@ -94,3 +105,23 @@ Open the .vimrc file and install its plugins:
 vim ~/.vimrc
 :PlugInstall
 ```
+
+Complete the [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe) plugin installations:
+
+```bash
+sudo apt install cmake
+cd ~/.vim/plugged/YouCompleteMe
+python3 install.py
+```
+
+Complete the [fzf](https://github.com/junegunn/fzf) plugin installations:
+
+```bash
+sudo apt install fzf && fzf
+```
+
+### fonts
+
+- Download a [Nerd Font](https://www.nerdfonts.com/)
+- Unzip and copy to `~/.fonts`
+- Run `fc-cache -fv` to manually rebuild the font cache
