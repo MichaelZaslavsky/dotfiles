@@ -31,6 +31,18 @@ if [ -x /usr/bin/dircolors ]; then
     alias vdir='vdir --color=auto'
 fi
 
+# Docker aliases
+alias db='docker build .'
+alias di='docker images'
+alias dl='docker logs'
+alias dps='docker ps -a'
+alias dpu='docker push'
+alias dr='docker run'
+alias dstart='docker start'
+alias dstats='docker stats'
+alias dstop='docker stop'
+alias dv='docker version'
+
 # Git aliases
 alias g='git'
 alias ga='git add .'
