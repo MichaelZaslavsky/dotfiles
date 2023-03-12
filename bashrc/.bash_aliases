@@ -31,6 +31,18 @@ if [ -x /usr/bin/dircolors ]; then
     alias vdir='vdir --color=auto'
 fi
 
+# Docker aliases
+alias db='docker build .'
+alias di='docker images'
+alias dl='docker logs'
+alias dps='docker ps -a'
+alias dpu='docker push'
+alias dr='docker run'
+alias dstart='docker start'
+alias dstats='docker stats'
+alias dstop='docker stop'
+alias dv='docker version'
+
 # Git aliases
 alias g='git'
 alias ga='git add .'
@@ -135,6 +147,27 @@ alias ll='ls -alF'
 # List largest directories
 alias dir5='du -cksh * | sort -hr | head -n 5'
 alias dir10='du -cksh * | sort -hr | head -n 10'
+
+# Kubernetes aliases
+alias ka='kubectl apply -f'
+alias kco='kubectl config'
+alias kcf='kubectl create -f'
+alias kci='kubectl cluster-info'
+alias kdd='kubectl describe deploy'
+alias kdelp='kubectl delete pod'
+alias kdn='kubectl describe node'
+alias kdp='kubectl describe pod'
+alias kds='kubectl describe svc'
+alias kgd='kubectl get deploy'
+alias kgn='kubectl get nodes -w'
+alias kgp='kubectl get pods'
+alias kgr='kubectl get rc'
+alias kgs='kubectl get svc'
+alias kl='kubectl logs -f'
+alias kr='kubectl run'
+alias ktn='kubectl top node'
+alias ktp='kubectl top pod'
+alias kv='kubectl version'
 
 # Safetynets
 alias rm='rm -I --preserve-root' # do not delete / or prompt if deleting more than 3 files at a time
